@@ -1,0 +1,7 @@
+[
+ {"id":"first","name":"Primer desafío","description":"Resuelve tu primera pregunta.","kind":"questions","goal":1},
+ {"id":"explorer","name":"Explorador","description":"Descubre los 8 bloques especiales.","kind":"blocks","goal":8},
+ {"id":"collector","name":"Coleccionista","description":"Recoge 20 monedas.","kind":"coins","goal":20},
+ {"id":"master","name":"Maestro matemático","description":"Resuelve 10 preguntas correctamente.","kind":"correct","goal":10},
+ {"id":"adventurer","name":"Aventurero","description":"Completa el primer mundo.","kind":"levels","goal":1}
+]

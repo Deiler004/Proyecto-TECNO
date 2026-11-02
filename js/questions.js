@@ -1,0 +1,4 @@
+export class QuestionBank {
+  constructor(items,history=[]){this.items=items;this.usedByStage=Array.from({length:3},(_,stage)=>new Set(history[stage]||[]));}
+  next(level=1,stage=0){const order=['Fácil','Intermedio','Difícil'];const topics=['Patrones y sucesiones','Fracciones','Ecuaciones lineales'];const minimum=Math.min(2,stage),maximum=Math.min(2,Math.max(stage,Math.floor((level-1)/2)));const matches=q=>q.topic===topics[stage]&&order.indexOf(q.difficulty)>=minimum&&order.indexOf(q.difficulty)<=maximum;let pool=this.items.filter(q=>matches(q)&&!this.usedByStage[stage].has(q.id));if(!pool.length){this.usedByStage[stage].clear();pool=this.items.filter(matches);}if(!pool.length)throw new Error(`No hay preguntas de ${topics[stage]} para la dificultad seleccionada.`);const q=pool[Math.floor(Math.random()*pool.length)];this.usedByStage[stage].add(q.id);return q;}
+}

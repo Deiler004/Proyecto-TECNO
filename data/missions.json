@@ -1,0 +1,5 @@
+[
+ {"id":"solve5","name":"Mente en marcha","description":"Resuelve 5 desafíos matemáticos.","goal":5,"reward":60,"kind":"questions"},
+ {"id":"coins10","name":"Brillo de pradera","description":"Recoge 10 monedas durante la aventura.","goal":10,"reward":45,"kind":"coins"},
+ {"id":"finish","name":"Primer horizonte","description":"Completa Las Praderas Numéricas.","goal":1,"reward":100,"kind":"levels"}
+]

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d43">
+  <meta name="description" content="Una aventura de plataformas donde las matemáticas abren el camino.">
+  <title>El Reino de las Matemáticas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/worlds.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="El Reino de las Matemáticas, inicio"><span class="brand-mark">∑</span><span>REINO<span class="brand-light"> DE LAS MATEMÁTICAS</span></span></a>
+      <div class="topbar-right"><span class="save-status" id="save-status">● Progreso guardado</span><button class="icon-button" id="sound-toggle" aria-label="Activar o desactivar sonido">♫</button></div>
+    </header>
+    <section class="game-stage" id="game-stage">
+      <canvas id="game-canvas" width="1280" height="720" aria-label="Juego de plataformas Las Praderas Numéricas"></canvas>
+      <div class="hud hidden" id="hud">
+        <div class="hud-left"><div class="hud-chip coin-chip"><span class="coin-icon">◆</span><strong id="coin-count">0</strong><small>MONEDAS</small></div><div class="hud-chip"><span class="hud-level">NV</span><strong id="player-level">1</strong><div class="xp-wrap"><div class="xp-track"><span id="xp-fill"></span></div><small id="xp-label">0 / 100 XP</small></div></div></div>
+        <div class="world-label"><small id="world-index">MUNDO 01</small><strong id="world-name">LAS PRADERAS NUMÉRICAS</strong></div>
+        <button class="mission-pill" id="mission-open"><span>✦ MISIONES</span><b id="mission-progress">0/5</b></button>
+        <button class="pause-button" id="pause-open" aria-label="Pausar">Ⅱ</button>
+      </div>
+      <div class="screen menu-screen" id="menu-screen">
+        <div class="menu-copy"><div class="eyebrow"><span></span> UNA AVENTURA PARA PENSAR</div><h1>EL REINO<br><em>DE LAS</em> MATEMÁTICAS</h1><p>Salta, explora y resuelve. Cada respuesta abre un nuevo camino.</p>
+          <div class="menu-actions"><button class="primary-button" id="play-button">JUGAR <span>→</span></button><button class="secondary-button" id="continue-button">CONTINUAR</button></div>
+          <div class="menu-links"><button data-panel="levels">Mundos</button><button data-panel="guide">Cómo jugar</button><button data-panel="achievements">Insignias</button><button data-panel="shop">Tienda</button><button data-panel="options">Opciones</button></div>
+        </div><div class="menu-emblem" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="emblem-sun">∑</div><div class="emblem-star star-one">✦</div><div class="emblem-star star-two">✧</div><div class="emblem-caption">MUNDO 01<br><b>LAS PRADERAS<br>NUMÉRICAS</b></div></div>
+        <div class="menu-footer"><span>01 — 03 MUNDOS</span><span>APRENDE JUGANDO · CRECE EXPLORANDO</span></div>
+      </div>
+      <div class="screen hidden" id="overlay-screen"><section class="panel" id="panel-content" role="dialog" aria-modal="true"></section></div>
+      <div class="toast hidden" id="toast" role="status"></div>
+    </section>
+    <footer class="site-footer"><span>EL REINO DE LAS MATEMÁTICAS</span><span>HECHO PARA EXPLORAR · HECHO PARA APRENDER</span></footer>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
