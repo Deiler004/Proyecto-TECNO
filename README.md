@@ -56,7 +56,14 @@ El servidor es para pruebas en una red local de confianza. No lo expongas direct
 - Cada recorrido tiene 9, 13 y 16 bloques matemáticos, respectivamente, con retos distribuidos por el nivel y sin repetir una pregunta del mismo mundo hasta agotar su banco.
 - Cada nivel tiene checkpoint propio, meta, escenario y conjunto propio de monedas y bloques. Completar un nivel desbloquea el siguiente.
 - Monedas, efectos de partículas y bloques matemáticos, de pista y recompensa.
-- 63 preguntas con respuesta y explicación, cinco temas generales y tres dificultades; cada pregunta se asigna a un mundo según su especialidad.
+- 80 preguntas con respuesta y explicación, cinco temas generales y tres dificultades; cada pregunta se asigna a un mundo según su especialidad.
+- Al menos dos retos de solución abierta por mundo, con patrones distintos, problemas cotidianos de fracciones y ecuaciones algebraicas contextualizadas; las ecuaciones se comprueban por su solución matemática.
+- El reto permite salir sin penalización ni consumir el bloque; al acertar, la acción de salida desaparece.
+- El historial visto sobrevive reinicios de campaña y, al agotar un ciclo, evita repetir inmediatamente la última pregunta.
+- Las opciones de respuesta se mezclan en cada aparición; el banco elige preguntas al azar y evita repetirlas hasta agotar el tema del mundo.
+- Las pistas aumentan de especificidad al reintentar: primero orientan y, tras otro fallo, muestran la explicación completa.
+- Competencias por tema muestran aciertos, intentos, precisión y la siguiente meta de dominio; hitos parciales dan XP y reconocen rachas.
+- Misiones acreditan y entregan su recompensa automáticamente al alcanzar el objetivo.
 - Experiencia, niveles, tres misiones, cinco insignias y tienda cosmética.
 - Guardado automático en LocalStorage, progreso de nivel y prevención de duplicar monedas recogidas.
 - Los enemigos quedan sobre una plataforma y su patrulla se recorta al mismo tramo de suelo, sin flotar sobre huecos.
@@ -65,6 +72,20 @@ El servidor es para pruebas en una red local de confianza. No lo expongas direct
 - La tienda permite comprar sin equipar automáticamente, usar cualquier traje adquirido y volver al traje original; el traje elegido se guarda.
 - Los errores en desafíos descuentan monedas sin revelar la respuesta; muestran una pista y permiten reintentar. Cada nuevo intento incorrecto aplica otra penalización.
 - Paneles de guía, pausa, opciones, logros, tienda y desafíos; sonidos originales sintetizados con Web Audio.
+
+## Criterios de la rúbrica
+
+1. **Solución abierta:** cada mundo incluye un reto escrito con varias respuestas aceptadas; en patrones, fracciones y ecuaciones se pueden proponer alternativas con procedimiento. Las fracciones equivalentes se comprueban numéricamente; una propuesta matemática nueva con procedimiento se registra como alternativa explicada.
+2. **Reconocimiento parcial:** cada tema reconoce hitos de 1, 3, 5, 10 y 15 aciertos con XP, y también se celebran rachas.
+3. **Dificultad incremental y prueba/error:** la dificultad sube por mundo y nivel del jugador; los errores dan pistas progresivas y permiten intentar de nuevo con una penalización moderada.
+4. **Alternativas:** los retos abiertos aceptan varias soluciones y el orden de las opciones cerradas cambia al presentarse.
+5. **Aleatoriedad:** se elige al azar dentro del banco temático, sin repetir hasta agotar preguntas disponibles.
+6. **Retroalimentación:** cada desafío muestra procedimiento; los fallos reciben primero una pista y luego una explicación más completa.
+7. **Nivel de competencia:** el panel Competencias muestra aciertos, intentos, precisión y la siguiente meta en cada tema.
+8. **Descubrimiento y desbloqueo:** bloques secretos e insignias reconocen exploración, y completar un mundo desbloquea el siguiente.
+9. **Automatización:** guardado automático, checkpoints, progresión de dificultad y cobro automático de misiones.
+
+La validación de texto libre no puede demostrar formalmente cualquier procedimiento; las respuestas abiertas reconocen propuestas explicadas para permitir estrategias distintas. Las interacciones recientes de salida y reinicio quedan pendientes de prueba en navegador si el servidor local no está activo.
 
 ## Guardado
 
@@ -77,11 +98,13 @@ La campaña incluye tres niveles. Incluye efectos de sonido, pero todavía no m�
 ## Comprobaciones de campaña
 
 - Verificado en navegador: «Continuar» inicia una partida nueva si aún no hay progreso y retoma el mundo guardado después de recargar.
+- Los bloques matemáticos están antes de la bandera final de cada mundo para que se puedan resolver antes de completar el nivel.
 - Verificado en navegador: el mapa mantiene mundos futuros bloqueados hasta que exista progreso de campaña; los mundos desbloqueados se pueden seleccionar directamente.
 - Simulación de físicas para los tres recorridos: se alcanzó la meta sin caídas, con 7, 10 y 12 saltos principales; aumentan de 7 a 10 y 13 enemigos y de 15 a 22 y 27 bloques totales.
 - Verificado que los enemigos de los tres mundos están sobre terreno sólido y patrullan dentro de ese tramo; los 9, 13 y 16 bloques matemáticos tienen una plataforma cercana y altura de salto alcanzable.
 - Verificado que cada mundo dispone de suficientes preguntas propias, que no se repiten dentro de un ciclo y que el historial evita repetir la última pregunta tras recargar.
 - Verificado: las preguntas empiezan en fácil, pasan a intermedio en el segundo mundo y a difícil en el tercero.
+- Comprobación pendiente en navegador para la versión actual: los cambios de solución abierta, competencias y misiones automáticas tienen validación estática, pero el servidor local no estuvo disponible en esta sesión.
 - Verificado: los tres mundos solo seleccionan preguntas de su tema propio; el banco de fracciones incluye suma, resta, multiplicación y división, y hay varias ecuaciones difíciles distintas para practicar el valor de x.
 - Verificado visualmente: cada escenario tiene siluetas, decoraciones, texturas, paleta y símbolos propios; el título del mundo ya no se superpone con los contadores del HUD.
 - Verificado: la colisión con la meta emite el evento del mundo correcto en cada nivel; los paneles de pausa/reinicio funcionan.

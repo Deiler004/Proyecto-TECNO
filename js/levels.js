@@ -1,6 +1,6 @@
 export const WORLDS = [
   { id: 0, name: 'Las Praderas Numéricas', subtitle: 'Descifra patrones y sucesiones', topic: 'Patrones y sucesiones', biome: 'prairie', width: 6000, goalX: 5780, start: { x: 90, y: 572 }, sky: ['#83d9d3','#c7e9c5','#f3d9a0'], hills: ['#77c3b4','#5aad9c','#488e83'], ground: '#47785b', turf: '#54a76c', earth: '#9b704d', accent: '#70c47b' },
-  { id: 1, name: 'El Bosque de las Fracciones', subtitle: 'Suma, resta, multiplica y divide fracciones', topic: 'Fracciones', biome: 'forest', width: 7600, goalX: 7380, start: { x: 90, y: 572 }, sky: ['#a7d8b2','#d3e6ac','#f3df9e'], hills: ['#51866b','#356b54','#234c42'], ground: '#604b3e', turf: '#82ae5b', earth: '#705143', accent: '#8ecb6a' },
+  { id: 1, name: 'El Bosque de las Fracciones', subtitle: 'Suma, resta, multiplica y divide fracciones', topic: 'Fracciones', biome: 'forest', width: 7600, goalX: 7550, start: { x: 90, y: 572 }, sky: ['#a7d8b2','#d3e6ac','#f3df9e'], hills: ['#51866b','#356b54','#234c42'], ground: '#604b3e', turf: '#82ae5b', earth: '#705143', accent: '#8ecb6a' },
   { id: 2, name: 'Las Cumbres Algebraicas', subtitle: 'Despeja x y resuelve ecuaciones', topic: 'Ecuaciones lineales', biome: 'mountain', width: 9000, goalX: 8780, start: { x: 90, y: 572 }, sky: ['#8bbde0','#d3d9e8','#f4c38f'], hills: ['#778cba','#586b9b','#3e507c'], ground: '#4d526b', turf: '#9ab9d1', earth: '#66627c', accent: '#91b5d8' }
 ];
 
@@ -37,7 +37,7 @@ const layouts = [
     enemies: [['moss',520,460,650,80],['beetle',980,900,1380,110],['moss',1770,1640,2180,96],['beetle',2570,2450,3000,120],['moss',3410,3290,3820,110],['beetle',4250,4100,4630,135],['moss',5100,4950,5480,125],['beetle',5870,5770,6150,145]],
     extraGround: [[6440,7010,600],[7130,7720,555],[7840,8440,635],[8560,9000,585]],
     extraLedges: [[6420,480,100],[6590,340,105],[6790,455,95],[6990,300,110],[7180,430,115],[7380,280,100],[7580,470,105],[7780,345,110],[7980,265,100],[8180,450,115],[8380,320,105],[8580,480,115],[8770,345,100],[8920,245,145]],
-    extraBlocks: [['a16',6460,380,'math'],['a17',6690,365,'math'],['a18',6910,310,'hint'],['a19',7170,380,'math'],['a20',7340,290,'reward'],['a21',7550,375,'math'],['a22',7900,385,'math'],['a23',7990,265,'hint'],['a24',8210,380,'math'],['a25',8370,365,'math'],['a26',8660,300,'reward'],['a27',8890,375,'math']],
+    extraBlocks: [['a16',6460,380,'math'],['a17',6690,365,'math'],['a18',6910,310,'hint'],['a19',7170,380,'math'],['a20',7340,290,'reward'],['a21',7550,375,'math'],['a22',7900,385,'math'],['a23',7990,265,'hint'],['a24',8210,380,'math'],['a25',8370,365,'math'],['a26',8520,300,'reward'],['a27',8680,375,'math']],
     extraCoins: [[6370,560],[6470,295],[6590,560],[6700,235],[6820,560],[6940,340],[7060,560],[7150,185],[7280,560],[7390,305],[7510,560],[7620,220],[7750,560],[7850,275],[7980,560],[8090,190],[8220,560],[8330,295],[8450,560],[8560,185],[8690,560],[8800,260],[8910,560],[8970,560]],
     extraEnemies: [['moss',6600,6490,6900,112],['beetle',7220,7100,7490,145],['moss',7830,7710,8060,132],['beetle',8440,8330,8690,158],['moss',8870,8790,8970,142]]
   }
